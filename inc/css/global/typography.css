@@ -1,0 +1,111 @@
+/* Typography */
+
+body {
+	font-size: var(--body-size);
+	font-family: var(--body-font);
+	font-weight: var(--body-weight);
+}
+
+p:last-of-type {
+	margin-bottom: 0 ;
+}
+
+p {
+	font-family: var(--body-font);
+	font-weight: var(--body-weight);
+	line-height: 1.5em;
+}
+
+a:not(#wpadminbar a){
+	font-family: var(--body-font);
+	line-height: 1.5em;
+}
+
+a, a:visited, .icon-text-inline {
+	font-weight: var(--link-weight);
+	font-style: var(--link-style);
+}
+
+h1 {
+	font-family: var(--h1-font) ;
+	font-weight: var(--h1-weight);
+	font-style: var(--h1-style);
+	font-size: var(--h1-size-m);
+	line-height: 1.1em;
+}
+
+h2 {
+	font-family: var(--h2-font) ;
+	font-weight: var(--h2-weight) ;
+	font-style: var(--h2-style);
+	font-size: var(--h2-size-m);
+	line-height: 1.2em;
+}
+
+h3 {
+	font-family: var(--h3-font) ;
+	font-weight: var(--h3-weight) ;
+	font-style: var(--h3-style);
+	font-size: var(--h3-size-m);
+}
+
+h4 {
+	font-family: var(--h4-font) ;
+	font-weight: var(--h4-weight) ;
+	font-style: var(--h4-style);
+	font-size: var(--h4-size-m);
+}
+
+h5 {
+	font-family: var(--h5-font) ;
+	font-weight: var(--h5-weight);
+	font-style: var(--h5-style);
+	font-size: var(--h5-size-m);
+}
+
+h6 {
+	font-family: var(--h6-font);
+	font-weight: var(--h6-weight);
+	font-style: var(--h6-style);
+	font-size: var(--h6-size-m);
+}
+
+@media only screen and (min-width: 992px) {
+	h1 {
+		font-size: var(--h1-size-d);
+	}
+
+	h2 {
+		font-size: var(--h2-size-d);
+	}
+
+	h3 {
+		font-size: var(--h3-size-d);
+	}
+
+	h4 {
+
+		font-size: var(--h4-size-d);
+	}
+
+	h5 {
+
+		font-size: var(--h5-size-d);
+	}
+
+	h6 {
+		font-size: var(--h6-size-d);
+	}
+}
+
+.user-content p, .elementor-widget-text-editor p {
+	color: var(--body-colour);
+}
+
+.user-content a, .elementor-widget-text-editor a, .user-content a:visited, .elementor-widget-text-editor a:visited, .icon-text-inline {
+	color: var(--link-colour);
+}
+
+.user-content a:hover, .elementor-widget-text-editor a:hover, .icon-text-inline:hover {
+	color: var(--link-hover-colour);
+}

@@ -1,0 +1,40 @@
+/* Archive styling */
+
+.blog-sf ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 15px;
+}
+
+@media screen and (max-width: 992px) {
+	.blog-sf ul {
+		flex-direction: column;
+	}
+}	
+
+.blog-sf ul li {
+	width: 50%;
+	padding: 0;
+}
+
+.blog-sf select {
+	background-color: transparent;
+	color: #fff;
+	border: 1px solid #fff;
+	background-image: url("data:image/svg+xml,%3Csvg fill='%23ffffff' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 13.1l-8-8 2.1-2.2 5.9 5.9 5.9-5.9 2.1 2.2z'/%3E%3C/svg%3E");
+}
+
+.blog-sf input {
+	background-color: transparent;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.blog-sf input:focus {
+	color: #fff;
+}
+
+.blog-sf input::placeholder {
+	color: #fff;
+}
