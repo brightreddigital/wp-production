@@ -15,7 +15,7 @@
 
 	// Cookiebar
 
-	$srcOne = "/wp-content/themes/wp_production/inc/js/cookiebar/cookiebar-latest.min.js?theme=minimal?customize=1&always=1&hideDetailsBtn=1&showPolicyLink=1&privacyPage=%2Fprivacy-policy";
+	$srcOne = "/wp-content/themes/wp-production/inc/js/cookiebar/cookiebar-latest.min.js?theme=minimal?customize=1&always=1&hideDetailsBtn=1&showPolicyLink=1&privacyPage=%2Fprivacy-policy";
 	$trackingACF = get_field('tracking_scripts', 'option');
 	$thirdACF = get_field('third_party_scripts', 'option');
 	$srcTracking = "";
