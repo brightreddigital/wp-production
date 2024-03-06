@@ -109,3 +109,7 @@ h6 {
 .user-content a:hover, .elementor-widget-text-editor a:hover, .icon-text-inline:hover {
 	color: var(--link-hover-colour);
 }
+
+.p-no-margin p {
+	margin: 0;
+}

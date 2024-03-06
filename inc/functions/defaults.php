@@ -84,3 +84,12 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
+
+// Add footer menu
+
+function footer_menu() {
+    register_nav_menu('footer-menu',__( 'Footer Bottom Menu' ));
+}
+add_action( 'init', 'footer_menu' );
+
+

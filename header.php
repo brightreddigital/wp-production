@@ -2,10 +2,8 @@
 /**
  * @package brightred
  */
-
-// include '/inc/functions/shortcodes.php';
-
 ?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -13,7 +11,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+	<?php wp_head();
+
+	// Cookiebar
+
+	$srcOne = "/wp-content/themes/wp_development/inc/js/cookiebar/cookiebar-latest.min.js?theme=minimal?customize=1&always=1&hideDetailsBtn=1&showPolicyLink=1&privacyPage=%2Fprivacy-policy";
+	$trackingACF = get_field('tracking_scripts', 'option');
+	$thirdACF = get_field('third_party_scripts', 'option');
+	$srcTracking = "";
+	$srcThird = "";
+	
+	if ($trackingACF) {
+		$srcTracking = "&tracking=1";
+	}  
+
+	if ($thirdACF) {
+		$srcThird = "&thirdparty=1";
+	}
+
+	if (isset($_COOKIE['cookiebar']) && $_COOKIE['cookiebar'] == "CookieCustomized" && $_COOKIE['cookiebar-tracking'] == "true" ) {  
+		echo $trackingACF;
+	}
+
+	if (isset($_COOKIE['cookiebar']) && $_COOKIE['cookiebar'] == "CookieCustomized" && $_COOKIE['cookiebar-third-party'] == "true" ) {  
+		echo $thirdACF;
+	}
+
+	if (isset($_COOKIE['cookiebar']) && $_COOKIE['cookiebar'] == "CookieAllowed") { 
+		echo $thirdACF;
+		echo $trackingACF;
+	}
+
+	$srcFull = $srcOne . $srcTracking . $srcThird ;
+
+	?>
+
+	<script type="text/javascript" src="<?php echo $srcFull ?>"></script>
 
 </head>
 

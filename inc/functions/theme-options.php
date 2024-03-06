@@ -20,6 +20,12 @@ function checkACFtheme() {
 		'menu_title'  => 'Typography',
 		'parent_slug' => 'theme-general-settings',
 	));
+
+	acf_add_options_sub_page(array(
+		'page_title'  => 'Tags and Analytics',
+		'menu_title'  => 'Tags and Analytics',
+		'parent_slug' => 'theme-general-settings',
+	));
 	
 
 
@@ -60,10 +66,10 @@ function checkACFtheme() {
 
 	function add_favicon(){ ?>
 
-		<link rel="icon" type="image/png" href="<?php echo the_field('favicon', 'option'); ?>">
-		<link rel="shortcut icon" type="image/png" href="<?php echo the_field('favicon', 'option'); ?>">
-		<link rel="apple-touch-icon" type="image/png" href="<?php echo the_field('favicon', 'option'); ?>">
-		<link rel="apple-touch-icon-precomposed" type="image/png" href="<?php echo the_field('favicon', 'option'); ?>">
+		<link rel="icon" type="image/png" href="<?php echo get_field('favicon', 'option'); ?>">
+		<link rel="shortcut icon" type="image/png" href="<?php echo get_field('favicon', 'option'); ?>">
+		<link rel="apple-touch-icon" type="image/png" href="<?php echo get_field('favicon', 'option'); ?>">
+		<link rel="apple-touch-icon-precomposed" type="image/png" href="<?php echo get_field('favicon', 'option'); ?>">
 
 	<?php }
 
@@ -1536,9 +1542,96 @@ acf_add_local_field_group(array(
 	'show_in_rest' => 0,
 ));
 
-endif;		
+endif;
+
+if ( function_exists('acf_add_local_field_group') ):
+
+	acf_add_local_field_group( array(
+	'key' => 'group_65e0ac0c0cff0',
+	'title' => 'Scripts',
+	'fields' => array(
+		array(
+			'key' => 'field_65e0ac0c54c6f',
+			'label' => 'Performance Scripts',
+			'name' => 'tracking_scripts',
+			'aria-label' => '',
+			'type' => 'textarea',
+			'instructions' => 'E.g. Google Analytics',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'placeholder' => '',
+			'new_lines' => '',
+		),
+		array(
+			'key' => 'field_65e0ace254c70',
+			'label' => 'Tracking Scripts',
+			'name' => 'third_party_scripts',
+			'aria-label' => '',
+			'type' => 'textarea',
+			'instructions' => 'E.g. Google Ads',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'placeholder' => '',
+			'new_lines' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'acf-options-tags-and-analytics',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => array(
+		0 => 'permalink',
+		1 => 'the_content',
+		2 => 'excerpt',
+		3 => 'discussion',
+		4 => 'comments',
+		5 => 'revisions',
+		6 => 'slug',
+		7 => 'author',
+		8 => 'format',
+		9 => 'page_attributes',
+		10 => 'featured_image',
+		11 => 'categories',
+		12 => 'tags',
+		13 => 'send-trackbacks',
+	),
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+) );
+
+endif;	
 	
+// Function ends
 }
+
+
 
 add_action('acf/init', 'my_acf_add_local_field_groups');
 
@@ -1547,12 +1640,12 @@ add_action('acf/init', 'my_acf_add_local_field_groups');
 function adobe_google(){
 
 	if( get_field('field_63d27fd387106', 'option') ): ?>
-		<link rel="stylesheet" href="https://use.typekit.net/<?php the_field('field_63d27fd387106', 'option'); ?>.css">
+		<link rel="stylesheet" href="https://use.typekit.net/<?php echo get_field('field_63d27fd387106', 'option'); ?>.css">
 		<script type="text/javascript">console.log('typekit')</script>
 	<?php endif; ?>
 
 	<?php if( get_field('field_63d27efc87105', 'option') ): ?>
-		<?php the_field('field_63d27efc87105', 'option'); ?>
+		<?php echo get_field('field_63d27efc87105', 'option'); ?>
 		<script type="text/javascript">console.log('google-font')</script>
 	<?php endif; 
 

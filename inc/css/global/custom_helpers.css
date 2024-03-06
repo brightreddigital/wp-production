@@ -1,0 +1,15 @@
+/* Custom */
+
+.elementor-select-wrapper .select-caret-down-wrapper {
+	display: none;
+}
+
+.elementor-slideshow__title {
+	display: none;
+}
+
+/* Helpers */
+
+.p-no-margin p {
+	margin: 0;
+}
