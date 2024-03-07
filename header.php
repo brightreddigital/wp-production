@@ -15,11 +15,20 @@
 
 	// Cookiebar
 
-	$srcOne = "/wp-content/themes/wp-production/inc/js/cookiebar/cookiebar-latest.min.js?theme=minimal?customize=1&always=1&hideDetailsBtn=1&showPolicyLink=1&privacyPage=%2Fprivacy-policy";
+	$srcOne = "/wp-content/themes/wp_development/inc/js/cookiebar/cookiebar-latest.min.js?theme=minimal?customize=1&always=1&hideDetailsBtn=1&showPolicyLink=1&privacyPage=%2Fprivacy-policy&refreshPage=1";
 	$trackingACF = get_field('tracking_scripts', 'option');
 	$thirdACF = get_field('third_party_scripts', 'option');
+	$blockACF = get_field('blocking_mode', 'option');
+	$srcBlock = "";
 	$srcTracking = "";
 	$srcThird = "";
+
+	if ($blockACF) {
+		$srcBlock = "&blocking=1"; ?>
+	
+		<style>#cookie-bar { display: none !important; }</style>
+
+	<?php }
 	
 	if ($trackingACF) {
 		$srcTracking = "&tracking=1";
@@ -42,11 +51,13 @@
 		echo $trackingACF;
 	}
 
-	$srcFull = $srcOne . $srcTracking . $srcThird ;
+	$srcFull = $srcOne . $srcBlock . $srcTracking . $srcThird ;
 
 	?>
 
 	<script type="text/javascript" src="<?php echo $srcFull ?>"></script>
+
+	<a href="#" onclick="document.cookie='cookiebar=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/'; setupCookieBar(); return false;">Manage Cookies</a>
 
 </head>
 
