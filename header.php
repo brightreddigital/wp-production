@@ -11,9 +11,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head();
+	<?php wp_head(); ?>
 
-	// Cookiebar
+	
+
+</head>
+
+<body <?php body_class(); ?>>
+	
+<?php wp_body_open(); 
+
+// Cookiebar
 
 	
 	$srcOne = get_stylesheet_directory_uri() . "/inc/js/cookiebar/cookiebar-latest.min.js?theme=minimal?customize=1&always=1&hideDetailsBtn=1&showPolicyLink=1&privacyPage=%2Fprivacy-policy&refreshPage=1";
@@ -57,12 +65,6 @@
 	?>
 
 	<script type="text/javascript" src="<?php echo $srcFull ?>"></script>
-
-</head>
-
-<body <?php body_class(); ?>>
-	
-<?php wp_body_open(); ?>
 
 <div id="page" class="site">
 
