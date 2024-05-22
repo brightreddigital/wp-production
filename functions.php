@@ -44,7 +44,7 @@ add_action('admin_notices', 'general_admin_notice');
 
 
 
-add_action( 'acf/init', 'checkACFcookie' );
+
 
 function checkACFcookie() {
 
@@ -94,3 +94,5 @@ function checkACFcookie() {
 
 
 	}
+
+	add_action( 'acf/init', 'checkACFcookie' );
