@@ -62,7 +62,7 @@ function checkACFcookie() {
 	if ($blockACF) {
 		$srcBlock = "&blocking=1";
 	
-		echo '<style>#cookie-bar { display: none !important; }</style>'
+		echo '<style>#cookie-bar { display: none !important; }</style>';
 
 	}
 	
