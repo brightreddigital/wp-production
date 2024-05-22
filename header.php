@@ -64,7 +64,7 @@
 
 	?>
 
-	<script type="text/javascript" src="<?php echo $srcFull ?>"></script>
+	<script type="text/javascript" id="cookiebar" src="<?php echo $srcFull ?>"></script>
 
 <div id="page" class="site">
 
