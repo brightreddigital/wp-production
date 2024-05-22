@@ -90,7 +90,7 @@ function checkACFcookie() {
 	$srcFull = $srcOne . $srcBlock . $srcTracking . $srcThird ;
 
 
-	echo '<script type="text/javascript" id="cookie-br" src="' . echo $srcFull . '"></script>';
+	echo '<script type="text/javascript" id="cookie-br" src="' . $srcFull . '"></script>';
 
 
 	}
