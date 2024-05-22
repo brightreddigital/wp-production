@@ -46,53 +46,53 @@ add_action('admin_notices', 'general_admin_notice');
 
 
 
-// function checkACFcookie() {
+function checkACFcookie() {
 
-// // Cookiebar
+// Cookiebar
 
 	
-// 	$srcOne = get_stylesheet_directory_uri() . "/inc/js/cookiebar/cookiebar-latest.min.js?theme=minimal?customize=1&always=1&hideDetailsBtn=1&showPolicyLink=1&privacyPage=%2Fprivacy-policy&refreshPage=1";
-// 	$trackingACF = get_field('tracking_scripts', 'option');
-// 	$thirdACF = get_field('third_party_scripts', 'option');
-// 	$blockACF = get_field('blocking_mode', 'option');
-// 	$srcBlock = "";
-// 	$srcTracking = "";
-// 	$srcThird = "";
+	$srcOne = get_stylesheet_directory_uri() . "/inc/js/cookiebar/cookiebar-latest.min.js?theme=minimal?customize=1&always=1&hideDetailsBtn=1&showPolicyLink=1&privacyPage=%2Fprivacy-policy&refreshPage=1";
+	$trackingACF = get_field('tracking_scripts', 'option');
+	$thirdACF = get_field('third_party_scripts', 'option');
+	$blockACF = get_field('blocking_mode', 'option');
+	$srcBlock = "";
+	$srcTracking = "";
+	$srcThird = "";
 
-// 	if ($blockACF) {
-// 		$srcBlock = "&blocking=1";
+	if ($blockACF) {
+		$srcBlock = "&blocking=1";
 	
-// 		echo '<style>#cookie-bar { display: none !important; }</style>';
+		echo '<style>#cookie-bar { display: none !important; }</style>';
 
-// 	}
+	}
 	
-// 	if ($trackingACF) {
-// 		$srcTracking = "&tracking=1";
-// 	}  
+	if ($trackingACF) {
+		$srcTracking = "&tracking=1";
+	}  
 
-// 	if ($thirdACF) {
-// 		$srcThird = "&thirdparty=1";
-// 	}
+	if ($thirdACF) {
+		$srcThird = "&thirdparty=1";
+	}
 
-// 	if (isset($_COOKIE['cookiebar']) && $_COOKIE['cookiebar'] == "CookieCustomized" && $_COOKIE['cookiebar-tracking'] == "true" ) {  
-// 		echo $trackingACF;
-// 	}
+	if (isset($_COOKIE['cookiebar']) && $_COOKIE['cookiebar'] == "CookieCustomized" && $_COOKIE['cookiebar-tracking'] == "true" ) {  
+		echo $trackingACF;
+	}
 
-// 	if (isset($_COOKIE['cookiebar']) && $_COOKIE['cookiebar'] == "CookieCustomized" && $_COOKIE['cookiebar-third-party'] == "true" ) {  
-// 		echo $thirdACF;
-// 	}
+	if (isset($_COOKIE['cookiebar']) && $_COOKIE['cookiebar'] == "CookieCustomized" && $_COOKIE['cookiebar-third-party'] == "true" ) {  
+		echo $thirdACF;
+	}
 
-// 	if (isset($_COOKIE['cookiebar']) && $_COOKIE['cookiebar'] == "CookieAllowed") { 
-// 		echo $thirdACF;
-// 		echo $trackingACF;
-// 	}
+	if (isset($_COOKIE['cookiebar']) && $_COOKIE['cookiebar'] == "CookieAllowed") { 
+		echo $thirdACF;
+		echo $trackingACF;
+	}
 
-// 	$srcFull = $srcOne . $srcBlock . $srcTracking . $srcThird ;
-
-
-// 	echo '<script type="text/javascript" id="cookie-br" src="' . $srcFull . '"></script>';
+	$srcFull = $srcOne . $srcBlock . $srcTracking . $srcThird ;
 
 
-// 	}
+	echo '<script type="text/javascript" id="cookie-br" src="' . $srcFull . '"></script>';
 
-// 	add_action( 'acf/init', 'checkACFcookie' );
+
+	}
+
+	add_action( 'wp_footer', 'checkACFcookie' );
